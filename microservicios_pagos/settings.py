@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-$*6j)8t(h+_^290u=np(pb16myba+tg^2!cg7-gk#3w7-y8tvq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -76,10 +76,21 @@ WSGI_APPLICATION = 'microservicios_pagos.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ofipensiones_db',
+        'USER': 'ofipensiones_user',
+        'PASSWORD': 'isis2503',
+        'HOST': '10.128.0.52',
+        'PORT': '',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
